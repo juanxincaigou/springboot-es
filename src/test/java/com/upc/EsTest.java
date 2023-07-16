@@ -377,15 +377,6 @@ public class EsTest {
         instance.setLanguage("chi_sim");//选择字库文件（只需要文件名，不需要后缀名）
         try {
             File imageFile = new File("src/main/resources/static/img.png");
-
-//            instance.setPageSegMode(6); // 设置页面分割模式
-//            BufferedImage bi = ImageIO.read(imageFile);
-//            BufferedImage binarized = new BufferedImage(bi.getWidth(), bi.getHeight(), BufferedImage.TYPE_BYTE_BINARY);
-//            Graphics2D g2 = binarized.createGraphics();
-//            g2.drawImage(bi, 0, 0, null);
-//            g2.dispose();
-//            ImageIO.write(binarized, "png", new File("src/main/resources/static/binarized.png")); // 保存二值化后的图片
-
             String result = instance.doOCR(imageFile);      //开始识别
             System.out.println(result);
         } catch (Exception e) {
