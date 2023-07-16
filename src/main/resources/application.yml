@@ -1,0 +1,60 @@
+spring:
+  resources:
+    #文件下载用得到
+    static-locations: classpath:/static/
+#  elasticsearch:
+#    rest:
+#      uris: 127.0.0.1:9200
+  devtools:
+    restart:
+      enabled: true #热部署生效
+
+  servlet:
+    multipart:
+      enabled: true # 开启 multipart 上传功能
+      max-file-size: 200MB # 最大文件大小
+      max-request-size: 215MB # 最大文件请求大小
+      file-size-threshold: 1MB # 文件写入磁盘的阈值
+
+
+    #  datasource:
+    #    url: jdbc:mysql://localhost:3306/springbootjpa? # 数据库连接地址
+    #    username: root # 用户名
+    #    password: 252111 # 密码
+    #    driverClassName: com.mysql.cj.jdbc.Driver # 数据库驱动
+
+
+    # 静态资源目录，多个目录用逗号分隔
+#    resources:
+#      static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+    #配置静态资源访问前缀，方便拦截器，所有的静态资源访问路由必须加上这个前缀，
+    #也来增强程序的可读性，即表示在某某静态文件下的某某资源文件
+    #注意在访问需要访问的静态资源时，一定要将完整的路径写在路由下，否则按照
+    #先动态再静态的访问顺序来，会找不到映射。
+#      mvc:
+#        static-path-pattern: /os/**
+
+
+
+logging:
+  level:
+    #es日志
+    org.springframework.data.elasticsearch.client.WIRE : trace
+
+
+server:
+  port: 9000
+  #如果启用https
+#  ssl:
+#    enabled: true
+#    key-store-type: JKS
+#    key-store: classpath:keystore.jks
+#    key-store-password: changeit
+
+#  jpa:
+#    show-sql: true #打印sql
+#    hibernate:
+#      ddl-auto: update
+#    database: mysql
+#    database-platform: org.hibernate.dialect.MySQL57Dialect
+#    generate-ddl: true #使用jpa来建表
